@@ -1,0 +1,19 @@
+server:
+  port: 8000
+spring:
+  jpa:
+    show-sql: true
+logging:
+  level:
+    root: info
+    #配置Log级别，让hibernate打印sql
+    org.hibernate: info
+    org.hibernate.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.descriptor.sql.BasicExtractor: TRACE
+management:
+  endpoint:
+    health:
+      show-details: always # 显示健康详情
+    web:
+      exposure:
+        include: metrics   #暴露metrics端点，如果暴露多个，用 , 分隔如需暴露所有端点，用 *
