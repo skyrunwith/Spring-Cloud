@@ -1,6 +1,9 @@
 server:
   port: 8000
 spring:
+  application:
+    name:
+      microservice-provider-user
   jpa:
     show-sql: true
 logging:
@@ -17,3 +20,7 @@ management:
     web:
       exposure:
         include: metrics   #暴露metrics端点，如果暴露多个，用 , 分隔如需暴露所有端点，用 *
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
