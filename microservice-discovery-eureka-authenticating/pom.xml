@@ -3,47 +3,44 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.12.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <groupId>com.fzd</groupId>
+        <artifactId>spring-cloud-study</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.fzd</groupId>
-    <artifactId>spring-cloud-study</artifactId>
+    <artifactId>microservice-discovery-eureka-authenticating</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-cloud-study</name>
-    <description>spring-cloud-study</description>
+    <name>microservice-discovery-eureka-authenticating</name>
+    <description>Demo project for Spring Boot</description>
 
     <properties>
         <java.version>1.8</java.version>
-
         <spring-cloud.version>Greenwich.SR5</spring-cloud.version>
     </properties>
 
-
-    <modules>
-        <module>microservice-simple-consumer-movie</module>
-        <module>microservice-simple-provider-user</module>
-        <module>microservice-discovery-eureka</module>
-
-        <module>microservice-discovery-eureka-ha</module>
-        <module>microservice-provider-user</module>
-        <module>microservice-consumer-movie</module>
-        <module>microservice-discovery-eureka-authenticating</module>
-    </modules>
-
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
         <dependencies>
-
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
