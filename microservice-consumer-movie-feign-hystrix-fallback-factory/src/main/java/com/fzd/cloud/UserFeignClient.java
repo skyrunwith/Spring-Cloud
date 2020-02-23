@@ -37,7 +37,7 @@ class UserFeignClientFallbackFactory implements FallbackFactory<UserFeignClient>
     }
 }
 
-//局部禁用
+//局部启用
 class FeignEnableHystrixConfiguration {
     @Bean
     @Scope(value = "prototype")
@@ -45,7 +45,7 @@ class FeignEnableHystrixConfiguration {
         return new HystrixFeign.Builder();
     }
 }
-//局部启用
+//局部禁用
 class FeignDisableHystrixConfiguration {
     @Bean
     @Scope("prototype")
