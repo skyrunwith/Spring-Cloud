@@ -1,0 +1,16 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: microservice-consumer-movie
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8761/eureka/
+management:
+  endpoint:
+    health:
+      show-details: always
+ribbon:
+  eager-load:
+    enabled: true
