@@ -1,0 +1,36 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: microservice-consumer-movie
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8761/eureka/
+logging:
+  level:
+    com.fzd.cloud.UserFeignClient: debug
+
+#feign:
+#  client:
+#    config:
+#      feignName:
+#        connectTimeout: 5000 #相当于Request.Options
+#        readTimeout: 5000 #相当于Request.Options
+#        # 配置Feign的日志级别，相当于代码配置方式中的Logger
+#        loggerLevel: FULL
+#        # Feign的错误解码器，相当于代码配置方式中的ErrorDecoder
+#        errorDecoder: com.example.SimpleErrorDecoder
+#        # 配置重试，相当于代码配置方式中的Retryer
+#        retryer: com.example.SimpleRetryer
+#        # 配置拦截器，相当于代码配置方式中的RequestInterceptor
+#        requestInterceptors:
+#          - com.example.FooRequestInterceptors
+#          - com.eamplete.BarRequestInterceptors
+#        decode404: false
+feign:
+  client:
+    config:
+      microservice-provider-user:
+        loggerLevel: full
+  com
