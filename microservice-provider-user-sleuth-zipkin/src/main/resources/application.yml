@@ -1,0 +1,35 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: microservice-provider-user
+  jpa:
+    show-sql: true
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      # 采样率，模式0.1，也就是10%，为了便于观察效果，改为1.0，也就是100%。生产环境建议保持默认。
+      probability: 1.0
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8761/eureka/, http://peer2:8762/eureka/
+logging:
+  level:
+    root: INFO
+    # 配置日志级别，让hibernate打印出执行的SQL参数
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    org.springframework.cloud.sleuth: DEBUG
+management:
+  endpoints:
+    web:
+      exposure:
+        # 开放所有监控端点
+        include: '*'
+  endpoint:
+    health:
+      # 是否展示健康检查详情
+      show-details: always
