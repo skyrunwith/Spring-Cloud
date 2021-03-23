@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 功能描述:
@@ -21,8 +22,18 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
+    /**
+     * 测试微服务访问timeout异常
+     * @return
+     */
+    @GetMapping(value = "/timeout")
+    public Optional<User> testTimeout() throws InterruptedException {
+        Thread.sleep(TimeUnit.MINUTES.toMillis(3));
+        return this.userRepository.findById(1L);
+    }
+
     @GetMapping(value = "/{id}")
-    public Optional<User> getUserById(@PathVariable Long id){
+    public Optional<User> getUserById(@PathVariable Long id) {
         return this.userRepository.findById(id);
     }
 

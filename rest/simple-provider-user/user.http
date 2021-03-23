@@ -1,0 +1,10 @@
+###
+GET http://localhost:8761
+
+> {%
+     client.global.set("base_url","http://localhost:8000");
+%}
+
+###
+GET http://localhost:8000/users/1
+UserInfo: {{UserInfo}}

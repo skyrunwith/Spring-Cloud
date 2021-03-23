@@ -1,0 +1,15 @@
+###
+//@no-log
+GET http://localhost:8761
+
+> {%
+     client.global.set("base_url","http://localhost:8010");
+%}
+
+###
+GET {{base_url}}/movies/users/1
+
+###
+GET {{base_url}}/movies/timeout
+
+###

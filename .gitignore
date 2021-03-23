@@ -13,4 +13,4 @@ buildNumber.properties
 
 /spring-cloud-study.iml
 /.idea/
-/microservice-consumer-movie-feign-config-java/microservice-consumer-movie-feign-config-java.iml
+/**/*.iml

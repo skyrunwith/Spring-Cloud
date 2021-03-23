@@ -24,4 +24,13 @@ public class MovieController {
     public User getUser(@PathVariable Long id){
         return restTemplate.getForObject("http://localhost:8000/users/{id}", User.class, id);
     }
+
+    /**
+     * 测试微服务访问timeout异常
+     * @return
+     */
+    @GetMapping("/timeout")
+    public User timeout(){
+        return restTemplate.getForObject("http://localhost:8000/users/timeout", User.class);
+    }
 }
