@@ -9,4 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface UserFeignClient {
     @GetMapping("/users/{id}")
     User getUser(@PathVariable Long id);
+
+    @GetMapping("/users/timeout")
+    User testTimeout();
 }

@@ -6,4 +6,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://peer1:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
+ribbon:
+  connect-timeout: 2000
+  read-timeout: 3000

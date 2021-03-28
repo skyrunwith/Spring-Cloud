@@ -38,4 +38,13 @@ public class MovieController {
         return new User(id, "默认用户", "默认用户", 0, new BigDecimal(0));
     }
 
+    /**
+     * 测试微服务访问timeout异常
+     * @return
+     */
+    @GetMapping("/timeout")
+    public User timeout(){
+        return restTemplate.getForObject("http://microservice-provider-user/users/timeout", User.class);
+    }
+
 }

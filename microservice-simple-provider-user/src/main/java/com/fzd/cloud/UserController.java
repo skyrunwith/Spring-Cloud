@@ -28,7 +28,7 @@ public class UserController {
      */
     @GetMapping(value = "/timeout")
     public Optional<User> testTimeout() throws InterruptedException {
-        Thread.sleep(TimeUnit.MINUTES.toMillis(3));
+        Thread.sleep(TimeUnit.SECONDS.toMillis(10));
         return this.userRepository.findById(1L);
     }
 

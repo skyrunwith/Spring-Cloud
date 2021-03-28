@@ -24,4 +24,13 @@ public class MovieController {
     public User getUser(@PathVariable Long id){
         return userFeignClient.getUser(id);
     }
+
+    /**
+     * 测试微服务访问timeout异常
+     * @return
+     */
+    @GetMapping("/timeout")
+    public User timeout(){
+        return userFeignClient.testTimeout();
+    }
 }

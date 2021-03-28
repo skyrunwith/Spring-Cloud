@@ -6,4 +6,10 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://peer1:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
+feign:
+  client:
+    config:
+      microservice-provider-user:
+        connectTimeout: 5000 #相当于Request.Options
+        readTimeout: 11000 #相当于Request.Options
